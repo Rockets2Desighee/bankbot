@@ -23,9 +23,10 @@ def reload_if_flag():
 @app.post("/message")
 def message(m: Msg):
     res  = bankbot.parse(m.text)
-    log_drift(res)
+    log_drift(res) #INTENT DRIFT CAPTURING
     clar = build_clarifier(res)
     _sessions[m.session_id] = res
+    del res['probs']
     return {**res, **clar}
 
 @app.post("/clarify")

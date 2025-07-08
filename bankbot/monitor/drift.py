@@ -1,4 +1,5 @@
-# bankbot/monitor/drift.py
+# bankbot/monitor/drift.py for INTENT DRIFT DETECTION
+
 import redis, math, datetime as dt, os, requests
 
 REDIS_URL      = os.getenv("REDIS_URL", "redis://localhost:6379/0")

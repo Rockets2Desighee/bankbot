@@ -30,6 +30,16 @@ def _tokenize(text, tok):
 
 def extract_entities(text: str, regex_hits: list):
     """merge regex + tagger"""
+        # --- helpers ------------------------
+    def _close(cur, i):
+        typ,start_tok = cur
+        offsets = tok_out["offsets"][0]
+        s = offsets[start_tok][0]; e = offsets[i-1][1]
+        span = text[s:e]
+        conf = float(probs[start_tok:i,:].mean())
+        if conf>0.7 and all(t!=typ for t,_ in found):
+            found.append((typ, span))
+            
     found = regex_hits[:]
 
     # 1. regex masking
@@ -67,12 +77,4 @@ def extract_entities(text: str, regex_hits: list):
 
     return found
 
-    # --- helpers ------------------------
-    def _close(cur, i):
-        typ,start_tok = cur
-        offsets = tok_out["offsets"][0]
-        s = offsets[start_tok][0]; e = offsets[i-1][1]
-        span = text[s:e]
-        conf = float(probs[start_tok:i,:].mean())
-        if conf>0.7 and all(t!=typ for t,_ in found):
-            found.append((typ, span))
+
