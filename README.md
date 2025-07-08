@@ -136,6 +136,12 @@ README.md            # (this file)
 
 We chose **DistilBERT** for NER to balance size & speed. **T5‑small** (≈60 M parameters) runs comfortably on CPU for a single question.
 
+Metrics Used while training:
+
+- Intent Classifier: training & eval cross-entropy loss, accuracy; monitored per epoch via HuggingFace Transformers’ TrainingArguments logs.
+
+- NER Tagger: token-level precision, recall and F1 using seqeval on a held-out split; plus training loss curves.
+  
 ---
 
 ## Usage & Smoke Tests
