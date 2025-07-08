@@ -1,0 +1,19 @@
+# Virtual environment
+venv/
+
+# ONNX and model folders
+bankbot/models/
+bankbot_intent/
+chk/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# macOS and editor files
+.DS_Store
+.vscode/
+
+# large size wrecked my Git Push
+bankbot/entity/tagger.onnx
+tmp_tagger/

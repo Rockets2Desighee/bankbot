@@ -1,0 +1,19 @@
+{
+    "report_fraud_critical": "connect_to_fraud_desk",
+    "emi_issue_medium":      "send_emi_schedule_pdf",
+    "balance_check_low":     "send_balance_auto",
+    "card_upgrade_low":      "trigger_card_upgrade_workflow",
+    "kyc_pending_low":       "send_kyc_link",
+    "account_issue_low":       "send_balance_auto",
+    "app_issue_low":           "route_to_support_team",
+    "check_balance_low":       "send_balance_auto",
+    "complaint_critical":      "route_to_support_team",
+    "complaint_low":            "route_to_support_team",
+    "failed_transaction_medium":"send_emi_schedule_pdf",
+    "feedback_low":            "log_customer_feedback",
+    "general_query_low":       "answer_general_faq",
+    "human_agent_request_low": "route_to_support_team",
+    "transaction_issue_medium":"send_emi_schedule_pdf",
+    "unknown_low":             "manual_review",
+    "update_info_low":         "send_kyc_link"
+  }
