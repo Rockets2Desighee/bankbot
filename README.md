@@ -13,6 +13,8 @@
 
 > This repo is intended as a demo for a production‑ready banking support pipeline, showcasing how to wire together lightweight transformer models, rule‑based extractors, and active learning in pure Python.
 
+SpeedRun: The goal is to get this as close to production as possible in under a week. Fun.
+
 ---
 
 ## Table of Contents
